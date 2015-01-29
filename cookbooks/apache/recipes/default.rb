@@ -12,11 +12,9 @@ package "httpd" do
 end
 
 # Disable the default virtual host
-execute "mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.disabled" do 
-  only_if do
-    File.exist?("/etc/httpd/conf.d/welcome.conf")
-  end
-  notifies :restart, "service[httpd]"
+apache_vhost "welcome" do
+	action :remove
+	notifies :restart, "service[httpd]"
 end
 
 # Iterate over the apache sites

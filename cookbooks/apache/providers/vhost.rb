@@ -30,3 +30,9 @@ action :create do
     )
   end
 end
+
+action :remove do
+	file "/etc/httpd/conf.d/#{new_resource.site_name}.conf" do
+		action :delete
+	end
+end
