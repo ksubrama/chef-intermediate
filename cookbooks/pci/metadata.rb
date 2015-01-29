@@ -1,6 +1,6 @@
 name             'pci'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Kartik Null Cating-Subramanian'
+maintainer_email 'ksubramanian@chef.io'
 license          'All rights reserved'
 description      'Installs/Configures pci'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
