@@ -13,6 +13,7 @@
 source "https://supermarket.chef.io"
 
 cookbook "ohai"
+cookbook "postfix"
 cookbook "chef_handler"
 
 # Example usage

@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: email_handler
-# Recipe:: default
+# Cookbook Name:: mailx
+# Spec:: default
 #
 # Copyright 2015 Kartik Null Cating-Subramanian
 # 
@@ -16,25 +16,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-chef_gem "pony" do
-	action :install
-end
 
-include_recipe "chef_handler"
-include_recipe "postfix"
-include_recipe "mailx"
+require 'spec_helper'
 
-cookbook_file "#{node['chef_handler']['handler_path']}/email_handler.rb" do
-	source "handlers/email_handler.rb"
-	owner "root"
-	group "root"
-	mode "0644"
-end
+describe 'mailx::default' do
 
-chef_handler "My::Email" do
-	source "#{node['chef_handler']['handler_path']}/email_handler.rb"
-	arguments [
-		node['email_handler']['from_address'],
-		node['email_handler']['to_address']]
-	action :enable
+  context 'When all attributes are default, on an unspecified platform' do
+
+    let(:chef_run) do
+      runner = ChefSpec::ServerRunner.new
+      runner.converge(described_recipe)
+    end
+
+    it 'converges successfully' do
+      chef_run # This should not raise an error
+    end
+
+  end
 end
