@@ -7,5 +7,8 @@ default_attributes({
 			"ssl_verify_mode" => ":verify_peer",
 			"log_level" => ":info"
 		}
+	},
+	"ohai" => {
+		"disabled_plugins" => [":Passwd"]
 	}
 })
