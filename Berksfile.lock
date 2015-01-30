@@ -1,0 +1,5 @@
+DEPENDENCIES
+  ohai
+
+GRAPH
+  ohai (2.0.1)

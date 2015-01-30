@@ -10,7 +10,9 @@
 # This declares the default location to search for cookbooks. The key :opscode
 # tells Berkshelf to search community.opscode.com for cookbooks. For a list of
 # other valid keys, see the Berkshelf documentation
-site :opscode
+source "https://supermarket.chef.io"
+
+cookbook "ohai"
 
 # Example usage
 # -------------
