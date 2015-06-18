@@ -4,9 +4,9 @@ current_dir = File.dirname(__FILE__)
 log_level                :info
 log_location             STDOUT
 node_name                "ksubrama"
-client_key               "#{current_dir}/ksubrama.pem"
+client_key               "C:/Users/ksubrama/.chef/ksubrama.pem"
 validation_client_name   "ksubrama-validator"
-validation_key           "#{current_dir}/ksubrama-validator.pem"
+validation_key           "C:/Users/ksubrama/.chef/ksubrama-validator.pem"
 chef_server_url          "https://api.opscode.com/organizations/ksubrama"
 syntax_check_cache_path  "#{ENV['HOME']}/.chef/syntaxcache"
 cookbook_path            ["#{current_dir}/../cookbooks"]
